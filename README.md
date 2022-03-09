@@ -12,7 +12,7 @@ You can clone this repository to create your own ec2-instance. To do so please u
 
 # Assumptions
 We are using the UTS AWS Sandpit account, meaning the vpc and subnet can be deleted at any time and may no longer exist.  
-**If you get errors validate the subnet id is still valid.*  
+**If you get errors validate the subnet id is still valid.**  
 
 # Code
 Code is run from the following directory /dev/ec2/terragrunt.hcl
