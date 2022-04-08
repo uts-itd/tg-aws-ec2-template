@@ -2,8 +2,8 @@
 
 locals {
   # Network
-  vpc_id_var     = "vpc-0b6406593fa86497a" # Non-Prod SIT VPC
-  vpc_cidr_block = "10.232.8.0/21"
+  vpc_id_var   = "vpc-0b6406593fa86497a" # Non-Prod SIT VPC
+  vpc_cidr_var = "10.232.8.0/21"
 
   pub_subnet2a_id_var = "subnet-09e61ca91ab82fd82" # Public Subnet 2a
   pub_subnet2b_id_var = "subnet-0099fd1ddd57e42c1" # Public Subnet 2b

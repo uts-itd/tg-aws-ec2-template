@@ -11,8 +11,8 @@ locals {
   instance_type        = local.variable_vars.locals.instance_type_var
   vpc_id               = local.variable_vars.locals.vpc_id_var
   prv_subnet2a_id      = local.variable_vars.locals.prv_subnet2a_id_var
-  volumne_size         = local.variable_vars.locals.volume_size_var
-  volumne_type         = local.variable_vars.locals.volume_type_var
+  volume_size          = local.variable_vars.locals.volume_size_var
+  volume_type          = local.variable_vars.locals.volume_type_var
   device_name          = local.variable_vars.locals.device_name_var
   iam_instance_profile = local.variable_vars.locals.iam_instance_profile_var
 
@@ -47,8 +47,8 @@ inputs = {
   ebs_block_device = [
     {
       device_name = "${local.device_name}"
-      volume_type = "${local.volume_size}"
-      volume_size = "${local.volume_type}"
+      volume_type = "${local.volume_type}"
+      volume_size = "${local.volume_size}"
       encrypted   = true
     }
   ]

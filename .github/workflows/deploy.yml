@@ -1,0 +1,34 @@
+name: 'Terragrunt GitHub Actions'
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  tf_version: 'latest'
+  tg_version: 'latest'
+
+jobs:
+  dev:
+    name: 'Terragrunt apply dev'
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+    
+      - name: 'checkout'
+        uses: actions/checkout@master
+
+      - name: 'Terragrunt run-all apply'
+        uses: uts-itd/terragrunt-github-actions@main
+        with:
+          tf_actions_version: ${{ env.tf_version }}
+          tg_actions_version: ${{ env.tg_version }}
+          tf_actions_binary: "terragrunt run-all"
+          tf_actions_working_dir: 'ap-southeast-2/dev'
+        env:
+          AWS_DEFAULT_REGION: 'ap-southeast-2'
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID}}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          TF_INPUT: false

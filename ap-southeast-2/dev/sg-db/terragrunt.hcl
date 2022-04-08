@@ -8,7 +8,7 @@ locals {
 
   variable_vars = read_terragrunt_config(find_in_parent_folders("variable.hcl"))
   vpc_id        = local.variable_vars.locals.vpc_id_var
-  vpc_cidr      = local.variable_vars.locals.vpc_cidr_block
+  vpc_cidr      = local.variable_vars.locals.vpc_cidr_var
 }
 
 include {

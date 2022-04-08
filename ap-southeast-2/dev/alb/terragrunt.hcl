@@ -72,7 +72,7 @@ inputs = {
       }
       protocol_version = "HTTP1"
       targets = {
-        ui01-server = {
+        server = {
           target_id = "${dependency.ec2.outputs.id}"
           port      = 80
         }
