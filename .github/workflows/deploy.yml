@@ -25,7 +25,7 @@ jobs:
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
-          tf_actions_binary: "terragrunt run-all"
+          tf_actions_subcommand: "terragrunt run-all"
           tf_actions_working_dir: 'ap-southeast-2/dev'
         env:
           AWS_DEFAULT_REGION: 'ap-southeast-2'
