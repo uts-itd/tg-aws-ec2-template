@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: 'Terragrunt run-all apply'
-        uses: uts-itd/terragrunt-github-actions@main
+        uses: maniankara/terragrunt-github-actions@master
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
