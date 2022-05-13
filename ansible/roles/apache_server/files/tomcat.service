@@ -1,0 +1,41 @@
+[Unit]
+
+Description=Tomcat Server
+
+After=syslog.target network.target
+
+
+
+[Service]
+
+Type=forking
+
+User=tomcat
+
+Group=tomcat
+
+
+
+Environment=CATALINA_HOME=/opt/sailpoint/tomcat
+
+Environment=CATALINA_BASE=/opt/sailpoint/tomcat
+
+Environment=CATALINA_PID=/opt/sailpoint/tomcat/temp/tomcat.pid
+
+
+
+ExecStart=/opt/sailpoint/tomcat/bin/catalina.sh start
+
+ExecStop=/opt/sailpoint/tomcat/bin/catalina.sh stop
+
+
+
+RestartSec=12
+
+Restart=always
+
+
+
+[Install]
+
+WantedBy=multi-user.target

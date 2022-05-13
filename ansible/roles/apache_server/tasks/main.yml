@@ -1,0 +1,9 @@
+---
+
+- include_tasks: pre_tasks.yml
+
+- include_tasks: add_disk.yml
+
+- include_tasks: apache_install.yml
+
+- include_tasks: cleanup.yml

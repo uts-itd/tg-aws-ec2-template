@@ -1,0 +1,19 @@
+---
+- name: Playbook to call Apache Server role
+  hosts: localhost
+  become: yes
+  become_user: root
+  gather_facts: yes
+  
+  tasks:
+    - name: Run the Sailpoint Apache Server role
+      include_role:
+        name: apache_server
+
+
+
+
+
+    
+
+    

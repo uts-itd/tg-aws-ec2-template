@@ -16,6 +16,15 @@ locals {
   device_name          = local.variable_vars.locals.device_name_var
   iam_instance_profile = local.variable_vars.locals.iam_instance_profile_var
 
+  user_data = <<-EOT
+  #!/bin/bash
+  echo "Hello Terragrunt!" > ~/file.out
+  amazon-linux-extras install ansible2 -y
+  yum install git -y
+  git clone https://github.com:uts-itd/tg-aws-ec2-template.git /root/tg-aws-ec2-template
+  ansible-playbook /root/tg-aws-ec2-template/ansible/playbook.yml  -v > ~/ansible.out
+  EOT
+
 }
 
 include {

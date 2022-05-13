@@ -1,0 +1,12 @@
+---
+
+- name: Install needed packages
+  package:
+    name: "{{ packages }}"
+
+- name: Create /opt/apache dir
+  file:
+    path: /opt/apacbe
+    state: directory
+    mode: '0755'
+    

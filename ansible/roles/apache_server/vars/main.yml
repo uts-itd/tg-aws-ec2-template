@@ -1,0 +1,4 @@
+packages:
+- python2-boto3 # nmaybe use pip instead
+#- python2-botocore # already installed by default
+- nmap-ncat

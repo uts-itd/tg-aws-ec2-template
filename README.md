@@ -4,16 +4,18 @@ This repo is to be used as a benchmark to be copied and forked for future AWS EC
 
 ## Environments
 
-Dev
-
-Prod
+- Dev
+- Prod
 
 ## Pre-requirements
 
 ## Create and manage your infrastructure
 
+Dev is a standard environment with one ALB, EC2 instance, DB and some Security Group
 
 ## To do
+
+- Try and create a module for the alb for_each
 
 ## Author
 
