@@ -2,7 +2,7 @@
 
 - name: Install Apache
   package:
-    name: apache
+    name: httpd
     state: present
 
 - name: Start Apache Service
