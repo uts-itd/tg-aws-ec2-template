@@ -62,6 +62,9 @@ inputs = {
   # Security Group
   vpc_security_group_ids = ["${dependency.sg.outputs.security_group_id}"]
 
+  # Call Ansible
+  user_data_base64 = base64encode(local.user_data)
+
   # EBS
   ebs_block_device = [
     {

@@ -11,8 +11,9 @@ This repo is to be used as a benchmark to be copied and forked for future AWS EC
 
 ## Create and manage your infrastructure
 
-Dev is a standard environment with one ALB, EC2 instance, DB and some Security Group
-Prod just creates a number of EC2 instances but creates them using for_each found in the module
+Dev is a standard environment with one ALB, one EC2 instance, one DB and some Security Groups to tie it all together.
+
+Prod just creates a number of EC2 instances but creates them using for_each found in the module so its a cleaner method of deployment
 
 ## To do
 
