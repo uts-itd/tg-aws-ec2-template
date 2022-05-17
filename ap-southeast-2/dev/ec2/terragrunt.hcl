@@ -18,13 +18,12 @@ locals {
 
   user_data = <<-EOT
   #!/bin/bash
-  echo "Hello Terragrunt!" > ~/file.out
+  echo "Hello Terragrunt" > ~/file.out
   amazon-linux-extras install ansible2 -y
   yum install git -y
-  git clone https://github.com:uts-itd/tg-aws-ec2-template.git /root/tg-aws-ec2-template
+  git clone https://github.com/uts-itd/tg-aws-ec2-template.git /root/tg-aws-ec2-template
   ansible-playbook /root/tg-aws-ec2-template/ansible/playbook.yml  -v > ~/ansible.out
   EOT
-
 }
 
 include {
@@ -33,6 +32,14 @@ include {
 
 terraform {
   source = "git::https://github.com/terraform-aws-modules/terraform-aws-ec2-instance.git?ref=v3.3.0"
+}
+
+dependency "sg" {
+  config_path = "../sg-ec2"
+
+  mock_outputs = {
+    security_group_id = "sg-04f3ba68558ed7f43"
+  }
 }
 
 inputs = {
@@ -51,6 +58,9 @@ inputs = {
   vpc_id                      = "${local.vpc_id}"
   subnet_id                   = "${local.prv_subnet2a_id}"
   associate_public_ip_address = false
+
+  # Security Group
+  vpc_security_group_ids = ["${dependency.sg.outputs.security_group_id}"]
 
   # EBS
   ebs_block_device = [

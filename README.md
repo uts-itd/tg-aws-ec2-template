@@ -12,10 +12,14 @@ This repo is to be used as a benchmark to be copied and forked for future AWS EC
 ## Create and manage your infrastructure
 
 Dev is a standard environment with one ALB, EC2 instance, DB and some Security Group
+Prod just creates a number of EC2 instances but creates them using for_each found in the module
 
 ## To do
 
-- Try and create a module for the alb for_each
+- Try and create a module for the alb that supports for_each
+- Try and create a module for the security groups that supports for_each
+- Dynamicly find the disk name before paritioning it in Ansible (its hardcoded for now)
+- Add some way of adding an inventory inside Ansible to the code can be used for any environment
 
 ## Author
 

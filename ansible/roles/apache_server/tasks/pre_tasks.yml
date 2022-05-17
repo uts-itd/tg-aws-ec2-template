@@ -6,7 +6,7 @@
 
 - name: Create /opt/apache dir
   file:
-    path: /opt/apacbe
+    path: /opt/apache
     state: directory
     mode: '0755'
     

@@ -25,5 +25,5 @@ locals {
   database_name_var     = "NonProd_TEMPDB"
   database_username_var = "NonProd_TEMPDB_Admin"
   intance_class_var     = "db.t3.small"
-  engine_version_var    = "5.7.12"
+  engine_version_var    = "5.7.mysql_aurora.2.07.2"
 }

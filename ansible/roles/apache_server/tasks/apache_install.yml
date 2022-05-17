@@ -1,3 +1,12 @@
 ---
 
+- name: Install Apache
+  package:
+    name: apache
+    state: present
+
+- name: Start Apache Service
+  service:
+    name: httpd
+    state: started
 

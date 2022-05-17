@@ -2,18 +2,18 @@
 
 - name: Partition disk
   parted:
-    device: /dev/nvme1n1
+    device: /dev/xvdf
     number: 1
     state: present
 
 - name: Create Filesystem on parition
   filesystem:
     fstype: xfs
-    dev: /dev/nvme1n1p1
+    dev: /dev/xvdf1
 
 - name: Mount data disk for /opt/apache
   mount:
     path: /opt/apache
-    src: /dev/nvme1n1p1
+    src: /dev/xvdf1
     fstype: xfs
     state: mounted

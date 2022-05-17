@@ -37,7 +37,7 @@ dependency "ec2" {
 }
 
 inputs = {
-  name        = "${local.project}${local.application}-alb-${local.env}"
+  name        = "${local.project}-${local.application}-alb-${local.env}"
   description = "Application Load Balancer for ${local.project} ${local.application} ${local.env}"
 
   vpc_id          = "${local.vpc_id}"
