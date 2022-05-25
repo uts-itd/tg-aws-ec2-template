@@ -75,4 +75,8 @@ inputs = {
     }
   ]
 
+  metadata_options = {
+    instance_metadata_tags = "enabled"
+  }
+
 }

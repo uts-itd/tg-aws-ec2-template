@@ -1,0 +1,17 @@
+---
+
+- name: Push /etc/profile file
+  copy:
+    src: profile
+    dest: /etc/profile
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Push bashrc file
+  copy:
+    src: bashrc
+    dest: /home/ssm-user/.bashrc
+    owner: ssm-user
+    group: ssm-user
+    mode: 0644
