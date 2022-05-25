@@ -1,5 +1,7 @@
 ---
 
+- include_tasks: soe.yml
+
 - include_tasks: pre_tasks.yml
 
 - include_tasks: add_disk.yml
