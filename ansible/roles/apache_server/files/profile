@@ -8,6 +8,8 @@
 # /etc/profile.d/ to make custom changes to your environment, as this
 # will prevent the need for merging in future updates.
 
+## Manage by Ansible ##
+
 pathmunge () {
     case ":${PATH}:" in
         *:"$1":*)
@@ -43,14 +45,21 @@ else
 fi
 
 HOSTNAME=`/usr/bin/hostname 2>/dev/null`
-HISTSIZE=1000
+
+# UTS SOE Custom modifications
+HISTFILE=~/.bash_history
+HISTSIZE=10000
+HISTFILESIZE=999999
+HISTIGNORE=""
+HISTCONTROL=""
+
 if [ "$HISTCONTROL" = "ignorespace" ] ; then
     export HISTCONTROL=ignoreboth
 else
     export HISTCONTROL=ignoredups
 fi
 
-export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL
+export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL HISTFILE HISTSIZE HISTFILESIZE 
 
 # By default, we want umask to get set. This sets it for login shell
 # Current threshold for system reserved uid/gids is 200

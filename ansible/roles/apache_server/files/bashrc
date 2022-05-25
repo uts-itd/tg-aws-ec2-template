@@ -1,5 +1,7 @@
 # .bashrc
 
+## Manage by Ansible ##
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
         . /etc/bashrc
