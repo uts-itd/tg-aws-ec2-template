@@ -9,11 +9,22 @@ This repo is to be used as a benchmark to be copied and forked for future AWS EC
 
 ## Pre-requirements
 
+If you are doing deployment and testing from your own local workstation have a look at this
+https://synergy.itd.uts.edu.au/display/CET/Setup+Terragrunt
+
+
 ## Create and manage your infrastructure
 
-Dev is a standard environment with one ALB, one EC2 instance, one DB and some Security Groups to tie it all together.
+Dev is a standard environment with one ALB, one EC2 instance, one DB (for illustration purposes) and some Security Groups to tie it all together.
+Ansible is used to configure the EC2 instance itself, by installing and configuring Apache along with other SOE tasks.
 
-Prod just creates a number of EC2 instances but creates them using for_each found in the module so its a cleaner method of deployment
+Prod just creates a number of EC2 instances but creates them using the 'for_each' mechanism found in the underlying terraform module. 
+This is a cleaner and more scalable method of deployment.
+Same principe applies to deploy other resources once the module itself supports it.
+
+This is a good place to look to see what modules support it. If not, one can always write their own.
+https://github.com/terraform-aws-modules
+
 
 ## To do
 
