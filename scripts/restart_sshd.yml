@@ -7,7 +7,7 @@
   gather_facts: yes
 
   tasks:
-    - name: Run the Sailpoint Apache Server role
+    - name: Example command 1
       shell:  uname -a > file-uname.out
 
     - name: Example command 2
