@@ -10,5 +10,5 @@
     - name: Stop sshd service
       service:
         name: sshd
-        status: stopped
+        state: stopped
         enabled: yes

@@ -10,5 +10,5 @@
     - name: Start sshd service
       service:
         name: sshd
-        status: started
+        state: started
         enabled: yes
