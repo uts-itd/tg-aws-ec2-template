@@ -1,1 +1,14 @@
 ---
+
+- name: Playbook ssh stop task
+  hosts: localhost
+  become: yes
+  become_user: root
+  gather_facts: no
+
+  tasks:
+    - name: Stop sshd service
+      service:
+        name: sshd
+        status: stopped
+        enabled: yes

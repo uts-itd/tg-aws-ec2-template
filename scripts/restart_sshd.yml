@@ -1,17 +1,14 @@
 ---
 
-- name: Playbook to call Apache Server role
+- name: Playbook ssh restart task
   hosts: localhost
   become: yes
   become_user: root
-  gather_facts: yes
+  gather_facts: no
 
   tasks:
-    - name: Example command 1
-      shell:  uname -a > file-uname.out
-
-    - name: Example command 2
-      shell: whoami
-
-    - name: Example command 3
-      shell:  systemctl restart sshd.service
+    - name: Restart sshd service
+      service:
+        name: sshd
+        status: restarted
+        enabled: yes
