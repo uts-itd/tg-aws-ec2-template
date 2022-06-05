@@ -1,0 +1,13 @@
+---
+
+- name: Playbook ssh restart task
+  hosts: localhost
+  become: yes
+  become_user: root
+  gather_facts: no
+
+  tasks:
+    - name: Restart sshd service
+      service:
+        name: sshd
+        enabled: no

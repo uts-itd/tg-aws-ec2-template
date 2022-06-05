@@ -33,6 +33,21 @@ https://github.com/terraform-aws-modules
 - Dynamicly find the disk name before paritioning it in Ansible (its hardcoded for now)
 - Add some way of adding an inventory inside Ansible to the code can be used for any environment
 
+## Scripts
+
+There are a number of Ansible Playbooks in this scripts directory. These are used by AWS SSM Assocations to action a task on EC2 instances.
+
+Assocations of the following names have been created in the prodlz-reshub-sit account
+- AWS-Ansible-Stop-SSH-EC2
+- AWS-Ansible-Start-SSH-EC2
+- AWS-Ansible-Restart-SSH-EC2
+- AWS-Ansible-Enable-SSH-EC2
+- AWS-Ansible-Disable-SSH-EC2
+
+Associations can be run manually via AWS System Manager -> State Manager -> AWS-Ansible-Stop-SSH-EC2 -> Apply association now
+
+This will execute the assocation and run the Ansible playbook against the instance or instances assigned to the association
+
 ## Author
 
 This project is created and maintained by [CloudEnablementTeam]This is a generic repo that should be forked and modified for your application needs.
