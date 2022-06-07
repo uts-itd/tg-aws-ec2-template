@@ -1,0 +1,26 @@
+name: Start SSH
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  dev:
+    name: 'Start SSH'
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+
+      - name: Checkout codebase
+        uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.SIT_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.SIT_AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-southeast-2
+
+      - name: Run Association to start ssh service
+        run: |
+          aws ssm start-associations-once --association-id "7a13d1af-21f5-460c-8a7a-0743944a616b"
