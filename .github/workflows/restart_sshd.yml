@@ -8,7 +8,7 @@ jobs:
   dev:
     name: 'Restart SSH'
     runs-on: ubuntu-latest
-    environment: nonprod
+    environment: dev
     steps:
 
       - name: Checkout codebase
