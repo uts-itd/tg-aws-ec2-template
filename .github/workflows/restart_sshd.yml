@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  nonprod:
+  dev:
     name: 'Restart SSH'
     runs-on: ubuntu-latest
     environment: nonprod
